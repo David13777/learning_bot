@@ -28,6 +28,9 @@ def get_random_image():
     return os.path.join(images_dir, random.choice(files))
 
 async def send_daily_fact():
+    # Отправляем сообщение сразу после запуска
+    await bot.send_message(chat_id=CHAT_ID, text="✅ Бот успешно запущен на Render!")
+
     while True:
         now = datetime.now()
         target = now.replace(hour=8, minute=5, second=0, microsecond=0)
